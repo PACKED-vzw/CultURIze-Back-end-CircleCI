@@ -22,31 +22,31 @@
 
 5. In the _Workflows_ screen, click the little cogwheel next to the name of the repository we just added to the workflows.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/cogwheelcircle.png|alt=cogwheel]]
+![cogwheel](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/cogwheelcircle.png)
 
 6. We now need to create some [SSH keys](https://en.wikipedia.org/wiki/Public-key_cryptography) so  CircleCI can deploy your .htaccess-files on your webserver. Open a terminal window and copy paste the following command: `ssh-keygen -m pem -f changethisname` (change `changethisname` to a name of your choice). Do not enter a passpharse and save the files in your `.ssh` directory. On Mac and Linux this is `~/.ssh/`, on windows this should be `C:\Users\yourusername\.ssh\`. This command will create an ssh key-pair: a public and a private key. Your private key is called `changethisname`, The public key `changethisname.pub`. We will use the private key in CircleCI and the public key on the webserver. [More information about SSH Keys pairs.](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
 7. Back to CircleCI. Open the _SSH-Permissions_ tab in the left pane and click _Add SSH-key_.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/SSH-Permissions.png|ssh-permissions]]
+![ssh-permissions](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/SSH-Permissions.png)
 
 Paste the content of the private key we just created (`changethisname`) in the _Private Key_ field.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/addsshkey.png|sshkey]]
+![sshkey](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/addsshkey.png)
 
 A simple way to do this, is to open the `changethisname` file with a text editor and copy paste the complete content of the file in the _Private Key_ field. Enter the host name of the webserver in the _Hostname_ field. Finally, click _Add SSH-Key_. 
 
 8. Scroll up in the left menu pane and select _Environment Variables_ under _Build Settings_.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/environmentvariables.png|envirinment variables]]
+![envirinment variables](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/environmentvariables.png)
 
 We are going to add two variables. Click _Add Variable_ and enter `SSH_HOST` under _name_. Under _value_, enter the IP-address (e.g. `172.16.254.1`) or host (e.g. `www.example.org`) of the web server.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/SSH_host.png|Ssh-host]]
+![Ssh-host](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/SSH_host.png)
 
 After selecting _Add Variable_ again, the variable should be added. Next, enter the second variable with name `SSH_USER` and the name of the user that has access to the web server.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/environmentvariablesSSH_USER.png|SSH_USER]]
+![SSH_USER](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/environmentvariablesSSH_USER.png)
 
 After selecting _Add variable_, both items should be added to the list. 
 
@@ -64,6 +64,6 @@ Keep in mind that you have to be the owner of the repository you are pushing to.
     * Click on the latest job status. 
     * At the bottom of the job detail page you will find an output of the processes that failed.
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/circlecijob.png|alt=circlecijobstatus]]
+![circleciobstatus](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/circlecijob.png)
 
-[[https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/circlecijobdetails.png|alt=circlecijobstatus]]
+![circleciobstatus](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI/blob/master/doc/images/circlecijobdetails.png)
