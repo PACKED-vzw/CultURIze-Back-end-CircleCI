@@ -1,10 +1,13 @@
-## CircleCi
+
+
+## Set up CircleCi 
 
 ### Requirements
 * Unix (Mac & Ubuntu tested)
 * A CircleCI account
 * Access to a [LAMP server](https://howtoubuntu.org/how-to-install-lamp-on-ubuntu) (MySQL and PHP are not mandatory for this setup)
 * Access to a terminal window
+* Culturize app installed on a client to push URI's to this repo
 
 ### Setup
 1. First fork and then clone the [Culturize-Back-end-CircleCi](https://github.com/PACKED-vzw/CultURIze-Back-end-CircleCI) locally: `git clone https://github.com/yourusername/CultURIze-Back-end-CircleCI`.  
